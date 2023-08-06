@@ -1,0 +1,13 @@
+<div data-controller="dialog" data-dialog-opened-value="<%= opened? %>">
+  <%= open_dialog_button %>
+
+  <dialog data-dialog-target="dialog" class="full-screen-dialog">
+    <div class="full-screen-dialog--layover" data-action="click->dialog#close"></div>
+
+    <div class="full-screen-dialog--content">
+      <%= dialog_body %>
+
+      <%= close_dialog_button %>
+    </div>
+  </dialog>
+</div>

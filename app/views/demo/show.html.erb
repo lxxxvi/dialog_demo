@@ -1,0 +1,59 @@
+<div data-controller="dialog" data-dialog-opened-value="false">
+  <button data-action="dialog#open">More info</button>
+
+  <dialog data-dialog-target="dialog" class="full-screen-dialog">
+    <div class="full-screen-dialog--layover" data-action="click->dialog#close"></div>
+
+    <div class="full-screen-dialog--content">
+      <h2>GLORIOUS CONTENT GOES HERE!</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <button data-action="dialog#close">Close</button>
+    </div>
+  </dialog>
+</div>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<%= render DialogComponent.new do |c| %>
+  <% c.with_open_dialog_button("Info about ViewComponent") %>
+
+  <% c.with_dialog_body do %>
+    <h2>This comes from the View component</h2>
+
+    <p>
+      Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    </p>
+  <% end %>
+
+  <% c.with_close_dialog_button("I've seen enough", class: "custom-close-button") %>
+<% end %>
