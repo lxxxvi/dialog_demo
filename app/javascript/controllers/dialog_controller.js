@@ -11,21 +11,21 @@ export default class extends Controller {
 
   render() {
     if (this.openedValue === true) {
+      document.addEventListener("keydown", this.handleKeydownBinding);
       this.dialogTarget.setAttribute("open", true);
     } else {
+      document.removeEventListener("keydown", this.handleKeydownBinding);
       this.dialogTarget.removeAttribute("open");
     }
   }
 
   open() {
     this.openedValue = true;
-    document.addEventListener("keydown", this.handleKeydownBinding);
     this.render();
   }
 
   close() {
     this.openedValue = false;
-    document.removeEventListener("keydown", this.handleKeydownBinding);
     this.render();
   }
 
